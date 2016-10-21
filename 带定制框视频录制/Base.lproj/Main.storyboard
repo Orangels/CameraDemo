@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Capture Video View Controller-->
+        <scene sceneID="AA0-Q6-KUN">
+            <objects>
+                <viewController id="9rm-if-iSH" customClass="AVCaptureVideoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kEU-PB-J4Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="QWE-1i-DZl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="haq-2F-slN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sb-jM-gll">
+                                <rect key="frame" x="150" y="549" width="75" height="30"/>
+                                <state key="normal" title="打开摄像头"/>
+                                <connections>
+                                    <action selector="openCapture:" destination="9rm-if-iSH" eventType="touchUpInside" id="aVh-aG-A6g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vcz-u6-ksL">
+                                <rect key="frame" x="172" y="598" width="30" height="30"/>
+                                <state key="normal" title="录像"/>
+                                <connections>
+                                    <action selector="takeCapture:" destination="9rm-if-iSH" eventType="touchUpInside" id="lFn-Ox-KXD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="captureBtn" destination="Vcz-u6-ksL" id="Vcl-To-eYT"/>
+                        <outlet property="openCaptureBtn" destination="0sb-jM-gll" id="720-Ka-3Qm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TYe-1g-RFl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-406.5" y="461.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZ4-Je-5jB">
+                                <rect key="frame" x="52" y="527" width="24" height="0.0"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOq-IG-Lmv">
+                                <rect key="frame" x="20" y="567" width="69" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="拍照"/>
+                                <connections>
+                                    <action selector="takeButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VRT-YM-ZLF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufL-t1-a7i">
+                                <rect key="frame" x="197" y="567" width="69" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="flashOn"/>
+                                <connections>
+                                    <action selector="flashOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PgW-z6-fBO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATF-ow-3Bv">
+                                <rect key="frame" x="286" y="567" width="68.5" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="flashOff"/>
+                                <connections>
+                                    <action selector="flashOffClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bkq-Rm-3f2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oak-if-9QO">
+                                <rect key="frame" x="89" y="533" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPy-kn-Jf5">
+                                <rect key="frame" x="164" y="533" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNh-UW-HAK">
+                                <rect key="frame" x="241" y="533" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXa-En-JDU">
+                                <rect key="frame" x="109" y="567" width="68" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="自动闪光灯"/>
+                                <connections>
+                                    <action selector="flashAutoClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A6m-Xa-5ln"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GgW-QV-WSd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="547"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iyF-dA-pTu">
+                                        <rect key="frame" x="159" y="160" width="57" height="54"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="550" id="ICf-P7-uxJ"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="iyF-dA-pTu"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="ICf-P7-uxJ"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eH0-Mw-GyE">
+                                <rect key="frame" x="20" y="617" width="69" height="40"/>
+                                <state key="normal" title="录制"/>
+                                <state key="selected" title="停止"/>
+                                <connections>
+                                    <action selector="takeVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yMz-Yd-hah"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ez-GP-AS0">
+                                <rect key="frame" x="39" y="-66" width="70" height="87"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smG-Nc-AyA">
+                                <rect key="frame" x="286.5" y="617" width="68.5" height="40"/>
+                                <state key="normal" title="摄像头"/>
+                                <connections>
+                                    <action selector="toggleButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XMN-DQ-wyC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ATF-ow-3Bv" firstAttribute="top" secondItem="IZ4-Je-5jB" secondAttribute="bottom" constant="20" id="0PB-h9-gOp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FXa-En-JDU" secondAttribute="bottom" constant="60" id="2T2-Tn-YAW"/>
+                            <constraint firstItem="eH0-Mw-GyE" firstAttribute="width" secondItem="dOq-IG-Lmv" secondAttribute="width" id="4DH-vl-RUa"/>
+                            <constraint firstItem="dOq-IG-Lmv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="6Wp-XS-b9u"/>
+                            <constraint firstItem="eH0-Mw-GyE" firstAttribute="height" secondItem="dOq-IG-Lmv" secondAttribute="height" id="6YT-ox-ZuU"/>
+                            <constraint firstItem="GgW-QV-WSd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6ue-fG-juL"/>
+                            <constraint firstItem="ATF-ow-3Bv" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="8Ia-YI-bsm"/>
+                            <constraint firstItem="ATF-ow-3Bv" firstAttribute="leading" secondItem="ufL-t1-a7i" secondAttribute="trailing" constant="20" id="8T0-UE-76N"/>
+                            <constraint firstAttribute="trailing" secondItem="GgW-QV-WSd" secondAttribute="trailing" id="8VD-Xs-g0e"/>
+                            <constraint firstItem="GgW-QV-WSd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="F6n-ar-9SM"/>
+                            <constraint firstItem="dOq-IG-Lmv" firstAttribute="top" secondItem="GgW-QV-WSd" secondAttribute="bottom" constant="20" id="FMu-kk-wE3"/>
+                            <constraint firstItem="ATF-ow-3Bv" firstAttribute="top" secondItem="GgW-QV-WSd" secondAttribute="bottom" constant="20" id="IaL-FU-pz5"/>
+                            <constraint firstItem="FXa-En-JDU" firstAttribute="top" secondItem="IZ4-Je-5jB" secondAttribute="bottom" constant="20" id="K4M-5t-zeA"/>
+                            <constraint firstAttribute="trailing" secondItem="smG-Nc-AyA" secondAttribute="trailing" constant="20" id="LY3-dG-wPu"/>
+                            <constraint firstItem="FXa-En-JDU" firstAttribute="leading" secondItem="dOq-IG-Lmv" secondAttribute="trailing" constant="20" id="RBh-jE-Qaa"/>
+                            <constraint firstItem="smG-Nc-AyA" firstAttribute="width" secondItem="ATF-ow-3Bv" secondAttribute="width" id="RVH-VR-pTl"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="smG-Nc-AyA" secondAttribute="bottom" constant="10" id="TPe-s8-WUb"/>
+                            <constraint firstItem="FXa-En-JDU" firstAttribute="width" secondItem="ufL-t1-a7i" secondAttribute="width" id="Ygs-aI-ZEj"/>
+                            <constraint firstItem="ufL-t1-a7i" firstAttribute="top" secondItem="IZ4-Je-5jB" secondAttribute="bottom" constant="20" id="ZJX-4x-qvu"/>
+                            <constraint firstItem="eH0-Mw-GyE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="a4A-Tc-YMc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ATF-ow-3Bv" secondAttribute="bottom" constant="60" id="c0I-cU-WzL"/>
+                            <constraint firstItem="ufL-t1-a7i" firstAttribute="top" secondItem="GgW-QV-WSd" secondAttribute="bottom" constant="20" id="dOb-Ff-9EX"/>
+                            <constraint firstAttribute="trailing" secondItem="ATF-ow-3Bv" secondAttribute="trailing" constant="20" id="eUn-Qy-XXG"/>
+                            <constraint firstItem="ufL-t1-a7i" firstAttribute="width" secondItem="ATF-ow-3Bv" secondAttribute="width" id="ec7-KT-Vnz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ufL-t1-a7i" secondAttribute="bottom" constant="60" id="hWP-cV-P74"/>
+                            <constraint firstItem="dOq-IG-Lmv" firstAttribute="width" secondItem="FXa-En-JDU" secondAttribute="width" id="hpG-Bu-OH9"/>
+                            <constraint firstItem="GgW-QV-WSd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="joV-a9-pnb"/>
+                            <constraint firstItem="smG-Nc-AyA" firstAttribute="top" secondItem="ATF-ow-3Bv" secondAttribute="bottom" constant="10" id="nNy-Z7-LNu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dOq-IG-Lmv" secondAttribute="bottom" constant="60" id="nRb-Rc-1Gv"/>
+                            <constraint firstItem="dOq-IG-Lmv" firstAttribute="top" secondItem="IZ4-Je-5jB" secondAttribute="bottom" constant="20" id="p7Q-5H-Tnh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eH0-Mw-GyE" secondAttribute="bottom" constant="10" id="q1W-0s-BLE"/>
+                            <constraint firstItem="smG-Nc-AyA" firstAttribute="height" secondItem="ATF-ow-3Bv" secondAttribute="height" id="svx-Va-z1G"/>
+                            <constraint firstAttribute="trailing" secondItem="GgW-QV-WSd" secondAttribute="trailing" id="thJ-ws-j62"/>
+                            <constraint firstItem="GgW-QV-WSd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vKh-Wx-2Dz"/>
+                            <constraint firstItem="ufL-t1-a7i" firstAttribute="leading" secondItem="FXa-En-JDU" secondAttribute="trailing" constant="20" id="wON-0T-vmI"/>
+                            <constraint firstItem="eH0-Mw-GyE" firstAttribute="top" secondItem="dOq-IG-Lmv" secondAttribute="bottom" constant="10" id="x7P-E2-YwR"/>
+                            <constraint firstItem="FXa-En-JDU" firstAttribute="top" secondItem="GgW-QV-WSd" secondAttribute="bottom" constant="20" id="xeQ-QF-kju"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="IZ4-Je-5jB"/>
+                                <exclude reference="Oak-if-9QO"/>
+                                <exclude reference="yPy-kn-Jf5"/>
+                                <exclude reference="CNh-UW-HAK"/>
+                                <exclude reference="8ez-GP-AS0"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="6ue-fG-juL"/>
+                                <exclude reference="8VD-Xs-g0e"/>
+                                <exclude reference="F6n-ar-9SM"/>
+                                <exclude reference="p7Q-5H-Tnh"/>
+                                <exclude reference="K4M-5t-zeA"/>
+                                <exclude reference="ZJX-4x-qvu"/>
+                                <exclude reference="0PB-h9-gOp"/>
+                                <exclude reference="8Ia-YI-bsm"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="flashAutoButton" destination="FXa-En-JDU" id="p78-Kt-fFC"/>
+                        <outlet property="flashOffButton" destination="ATF-ow-3Bv" id="miH-ul-pKK"/>
+                        <outlet property="flashOnButton" destination="ufL-t1-a7i" id="h2E-Of-7qB"/>
+                        <outlet property="takeButton" destination="dOq-IG-Lmv" id="0i4-ha-5Lb"/>
+                        <outlet property="takeViedoBtn" destination="eH0-Mw-GyE" id="aV6-VS-h47"/>
+                        <outlet property="viewContainer" destination="GgW-QV-WSd" id="Qci-rO-BHK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="158.5" y="461.5"/>
+        </scene>
+    </scenes>
+</document>
